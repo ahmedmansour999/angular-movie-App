@@ -1,0 +1,107 @@
+<section>
+  <div class="container1 d-flex flex-column flex-md-row p-5">
+    <div class="img">
+      <img [src]="tvChannels.poster_path | apiImg" class="w-100" alt="" />
+    </div>
+    <div class="details ps-md-5 d-flex align-items-start">
+      <div class="line h-100 border border-1"></div>
+
+      <div class="text px-md-5 pt-3">
+        <div class="title d-flex align-items-center justify-content-between">
+          <h2 class="text-light">{{ tvChannels.original_name }}</h2>
+          <span class="text-light">{{ tvChannels.type }}</span>
+        </div>
+
+        <p class="text-white pt-lg-2">
+          {{ tvChannels.overview }}
+        </p>
+
+        <div class="vote d-flex align-items-center justify-content-between">
+          <a [href]="tvChannels.homepage" target="_blank" class="homepage"
+            >Home Page</a
+          >
+          <span class="text-light">Rating : {{ tvChannels.vote_average }}</span>
+        </div>
+
+        <div class="company d-flex mt-3">
+          @for(company of tvChannels.production_companies ; track
+          tvChannels.production_companies.id ){ @if (company.logo_path) {
+          <div class="companyImg m-2">
+            <div class="comImg h-50 d-flex align-items-center">
+              <img
+                [src]="company.logo_path | apiImg"
+                alt=""
+                class="w-100 bg-light"
+              />
+            </div>
+            <span class="text-light p-0 h-50">{{ company.name }}</span>
+          </div>
+          } }
+        </div>
+
+        <div class="vote d-flex align-items-center justify-content-between">
+          <span class="text-light"
+            >episodes : {{ tvChannels.number_of_episodes }}</span
+          >
+          <span class="text-light"
+            >seasons : {{ tvChannels.number_of_seasons }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if (tvChannels.seasons ) {
+  <div class="conatiner2">
+    <h2 class="text-center text-light">Season</h2>
+
+    <div class="d-flex justify-content-center flex-wrap">
+      @for( seasons of tvChannels.seasons ; track seasons.id ){ @if
+      (seasons.poster_path !== null) {
+      <div class="img cover m-2">
+        <div class="imgCard">
+          <img [src]="seasons.poster_path | apiImg" class="w-100" alt="" />
+        </div>
+        <div class="text-light text-center fw-bold">
+          <p class="p-0 m-0">{{ seasons.name }}</p>
+          <p class="p-0 m-0">episode : {{ seasons.episode_count }}</p>
+        </div>
+      </div>
+      } }
+    </div>
+  </div>
+  } @if (tvChannels.created_by.lenght > 0) {
+  <div class="conatiner2">
+    <h2 class="text-center text-light">created By</h2>
+
+    <div class="d-flex justify-content-center flex-wrap">
+      @for( actor of tvChannels.created_by ; track actor.id ){ @if
+      (actor.profile_path) {
+      <div class="img m-2 w-50">
+        <div class="imgCard">
+          <img [src]="actor.profile_path | apiImg" class="w-100 actor" alt="" />
+        </div>
+        <div class="text-light text-center fw-bold">
+          <p class="p-0 m-0">{{ actor.name }}</p>
+        </div>
+      </div>
+      } }
+    </div>
+  </div>
+  }
+
+  <app-about3/>
+
+  <div class="Vedio text-light mt-5 h-100">
+    @if (tvVedios) {
+    <div class="text-center mb-5">
+      <h1 >Trailer</h1>
+      <i class="mt-2">{{ tvChannels.tagline }}</i>
+    </div>
+    <div class="frame w-100 h-100">
+      <iframe [src]="tvVedios" width="100%" height="400"></iframe>
+    </div>
+    }
+  </div>
+</section>
+<app-subscribe/>

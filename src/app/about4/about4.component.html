@@ -1,0 +1,42 @@
+<!-- <div class="container1 d-flex flex-column flex-md-row p-5">
+  <div class="img">
+    <img [src]="trendMovie.poster_path | apiImg" class="w-100" alt="" />
+  </div>
+  <div class="details ps-md-5 d-flex align-items-start">
+    <div class="line h-100 border border-1"></div>
+
+    <div class="text px-md-5 pt-3">
+      <div class="title d-flex align-items-center justify-content-between">
+        <h2 class="text-light">{{ trendMovie.title }}</h2>
+        <span class="text-light">{{ trendMovie.release_date }}</span>
+      </div>
+
+      <p class="text-white pt-lg-2">
+        {{ trendMovie.overview }}
+      </p>
+
+      <div class="vote d-flex align-items-center justify-content-between">
+        <a [href]="trendMovie.homepage" target="_blank" class="homepage"
+          >Home Page</a
+        >
+        <span class="text-light">Rating : {{ trendMovie.vote_average }}</span>
+      </div>
+
+      <div class="company d-flex mt-3">
+        @for(company of trendMovie.production_companies ; track
+        trendMovie.production_companies.id ){ @if (company.logo_path) {
+        <div class="companyImg m-2">
+          <div class="comImg h-50 d-flex align-items-center">
+            <img
+              [src]="company.logo_path | apiImg"
+              alt=""
+              class="w-100 bg-light"
+            />
+          </div>
+          <span class="text-light p-0 h-50">{{ company.name }}</span>
+        </div>
+        } }
+      </div>
+    </div>
+  </div>
+</div> -->

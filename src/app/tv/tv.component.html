@@ -1,0 +1,20 @@
+<section>
+
+  <h2 class="text-light mx-2 px-5 text-uppercase ">Tv shows <i class="fa-solid fa-tv text-warning"></i></h2>
+
+  <div class="con mx-5">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    @for(tvChannel of tvChannels ; track tvChannel.id){
+    <div ngxSlickItem class="slide pt-5 p-3">
+      <div class="cards" (click)="sendId(tvChannel.id)">
+        <div class="imgContainer">
+          <img [src]="tvChannel.poster_path | apiImg"  alt="" class="w-100" />
+        </div>
+        <p class="text-center p-2 text-light">{{ tvChannel.original_name }}</p>
+      </div>
+    </div>
+    }
+  </ngx-slick-carousel>
+
+</div>
+</section>

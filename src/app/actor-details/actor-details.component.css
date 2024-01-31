@@ -1,0 +1,92 @@
+.line {
+  width: 0;
+}
+
+.text {
+  overflow: hidden;
+}
+
+.img {
+  min-width: 25%;
+}
+
+.img img {
+  object-fit: contain;
+  height: 100%;
+  max-height: 400px;
+}
+
+.homepage {
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+}
+
+.companyImg {
+  height: fit-content;
+}
+
+.cover {
+  min-width: 0;
+}
+
+.comImg {
+  overflow: hidden;
+  max-height: 80px;
+}
+
+.title,
+.text .text-white
+ {
+  animation: titleMove 2s forwards ease-in;
+  transform: translateX(-110%);
+}
+
+
+
+@keyframes titleMove {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.imgContainer
+{
+  overflow: hidden !important;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 4px red;
+}
+
+.imgContainer:hover
+{
+  box-shadow: 0px 0px 5px 4px gold;
+}
+.imgContainer img
+{
+  filter:brightness(.5) ;
+  transition: scale 10s ease-in-out;
+}
+.imgContainer img:hover
+{
+  transform: scale(1.2);
+  filter:brightness(1) !important ;
+}
+ .slide:has(img:hover)
+{
+  transform: translateY(-5%);
+}
+
+.hoverLight
+{
+  overflow: hidden;
+}
+.hoverLight:hover
+{
+  box-shadow: 0px 0px 5px 4px white;
+}
+
+

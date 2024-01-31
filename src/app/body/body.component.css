@@ -1,0 +1,95 @@
+section {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+@keyframes scrollBackground {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+section::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 600%;
+  background-image: url('https://www.plex.tv/wp-content/uploads/2021/04/plex-splash-screen-04-30-21-new-1024x576.png');
+  background-repeat: repeat-x;
+  animation: scrollBackground 35s linear infinite;
+}
+.txt
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  width: 100%;
+}
+.logo {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: red;
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  border-top: 4px solid red;
+}
+.logo h1 {
+  animation: logoAnimation 4s 2s forwards;
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: translateY(-80%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+    letter-spacing: 0;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+    letter-spacing: 8px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    letter-spacing: 3px; /* Reset letter-spacing to the original value */
+  }
+}
+
+button
+{
+  position: absolute;
+    right: 0;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 25px ;
+    background-color: red;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0 15px;
+
+}
+button:hover
+{
+  background-color: black;
+  color: white;
+}
+input
+{
+  border-radius: 25px;
+
+}

@@ -1,0 +1,41 @@
+<section class="titleContainer">
+  <h1 class="title text-uppercase text-light text-center mt-5 mb-3">
+    <span class="text-danger fw-bolder">Fav</span> Movies
+  </h1>
+</section>
+
+<section class="d-flex justify-content-evenly flex-wrap">
+  @for(FavMove of FavMoves ; track FavMove.id){
+  <div class="movie-card m-3">
+    @if (FavMove.poster_path) {
+    <img
+      [src]="FavMove.poster_path | apiImg"
+      [alt]="FavMove.title"
+      class="100%"
+    />
+    } @if (FavMove.title) {
+    <p class="fw-bold hint">
+      {{ FavMove.title }}
+      <button class="icon" (click)="removeMovie(FavMove.id)">
+        <i class="fa-solid fa-xmark " ></i>
+      </button>
+    </p>
+    }
+    <p class="fw-bold hint">
+      {{ FavMove.name }}
+
+      <button class="icon" (click)="removeMovie(FavMove.id)">
+        <i class="fa-solid fa-xmark " ></i>
+      </button>
+    </p>
+  </div>
+  }
+</section>
+
+<section class="d-flex justify-content-center mt-5">
+  <button class="btn btn-outline-warning fs-5 text-uppercase" routerLink="home">
+    more
+  </button>
+</section>
+
+<app-about3 />

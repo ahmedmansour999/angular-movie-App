@@ -1,0 +1,29 @@
+section
+{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.line
+{
+  width: 0;
+}
+h1
+{
+  font-size: 5rem;
+}
+input
+{
+  outline-color: red;
+}
+
+
+@media screen and (max-width: 465px) {
+  h1 {
+    font-size: 3rem;
+  }
+  button {
+    width: 100%;
+  }
+}

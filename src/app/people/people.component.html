@@ -1,0 +1,22 @@
+<section>
+
+  <h2 class="text-light mx-2 px-5 text-uppercase ">Actors <i class="fa-solid fa-user text-primary"></i></h2>
+
+  <div class="con mx-5">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    @for(people of peoples ; track people.id){
+      @if (people.profile_path !== null) {
+        <div ngxSlickItem class="slide pt-5 p-3  " [routerLink]='["actorDetails" , people.id]'>
+          <div class="cards">
+            <div class="imgContainer">
+              <img [src]="people.profile_path | apiImg"  alt="" class="w-100" />
+            </div>
+            <p class="text-center p-2 text-light">{{ people.name }}</p>
+          </div>
+        </div>
+      }
+    }
+  </ngx-slick-carousel>
+
+</div>
+</section>

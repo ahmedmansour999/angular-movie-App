@@ -1,0 +1,23 @@
+<section>
+
+  <h2 class="text-light m-2 px-5  text-uppercase " >trending <span><i class="fa-solid fa-arrow-trend-up text-warning"></i></span></h2>
+
+  <div class="con mx-5">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    @for(movie of AllMovie ; track movie.id){
+    <div ngxSlickItem class="slide pt-5 p-3">
+      <div class="cards">
+        <div class="imgContainer"    (click)="sendId(movie.id)">
+          <img [src]="movie.poster_path | apiImg"  alt="" class="w-100" />
+        </div>
+        @if (movie.title) {
+          <p class="text-center p-2 text-light">{{ movie.title }}</p>
+        }
+        <p class="text-center p-2 text-light">{{ movie.name }}</p>
+      </div>
+    </div>
+    }
+  </ngx-slick-carousel>
+
+</div>
+</section>

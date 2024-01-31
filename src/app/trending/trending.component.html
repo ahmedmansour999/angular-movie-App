@@ -1,0 +1,24 @@
+<section class="titleContainer">
+  <h1  class="title text-uppercase text-light text-center mt-5 mb-3  " >
+    Trending <span class="text-danger fw-bolder">Movies</span>
+  </h1>
+</section>
+
+
+<section class="d-flex justify-content-evenly flex-wrap">
+  @for(movie of movies ; track movie.id){
+  <div class="movie-card m-3" [routerLink]="['details' , movie.id]">
+    <img [src]="movie.poster_path | apiImg" [alt]="movie.title" class="100%" />
+    @if (movie.title) {
+      <p class="fw-bold hint">{{ movie.title }}</p>
+    }
+      <p class="fw-bold hint">{{ movie.name }}</p>
+  </div>
+  }
+</section>
+
+<section class="d-flex justify-content-center mt-5">
+  <button class="btn btn-outline-warning fs-5 text-uppercase" routerLink="home">more</button>
+</section>
+
+<app-about3/>

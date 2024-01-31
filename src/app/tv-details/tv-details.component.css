@@ -1,0 +1,83 @@
+.line {
+  width: 0;
+}
+
+.text {
+  overflow: hidden;
+}
+
+.img {
+  min-width: 25%;
+}
+
+.img img {
+  object-fit: contain;
+  height: 100%;
+  max-height: 400px;
+}
+
+.homepage {
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+}
+
+.companyImg {
+  height: fit-content;
+}
+
+.cover {
+  min-width: 0;
+}
+
+.comImg {
+  overflow: hidden;
+  max-height: 80px;
+}
+
+.title,
+.text .text-white,
+.company,
+.vote {
+  animation: titleMove 2s forwards ease-in;
+  transform: translateX(-110%);
+}
+
+/* .text .text-white ,
+.company ,
+.vote
+{
+  animation: titleMove 2s 2s forwards ease-in;
+  transform: translateX(-110%);
+} */
+
+@keyframes titleMove {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.Vedio {
+  justify-content: space-evenly;
+  height: 80vh;
+}
+
+.imgCard {
+  box-shadow: 0px 0px 10px white;
+  transition: all 0.4 ease-in-out;
+}
+
+.imgCard:hover {
+  opacity: 0.5;
+  box-shadow: 0px 0px 20px gold;
+  transform: scale3d(0.8, 0.8, 1);
+}
+
+.paraText,
+.titleText {
+  letter-spacing: 2px;
+}

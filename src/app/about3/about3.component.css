@@ -1,0 +1,20 @@
+h2 , span
+{
+  cursor:default ;
+
+}
+p
+{
+  max-width: 80%;
+  opacity: .5;
+  cursor:default ;
+}
+a
+{
+  cursor: pointer;
+  color: gold;
+}
+a:hover
+{
+  color: red;
+}

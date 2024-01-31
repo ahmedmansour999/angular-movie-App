@@ -1,0 +1,84 @@
+<section>
+
+  <div class="container1 d-flex flex-column flex-md-row p-5 ">
+    <div class="img hoverLight">
+      <img [src]="actor.profile_path | apiImg" class="w-100 " alt="" />
+    </div>
+    <div class="details ps-md-5 d-flex align-items-start">
+      <div class="line h-100 border border-1"></div>
+
+      <div class="text px-md-5 pt-3">
+        <div class="title d-flex align-items-center justify-content-between">
+          <h2 class="text-light">{{ actor.name }}</h2>
+          <span class="text-light">{{ actor.known_for_department }}</span>
+        </div>
+
+        <p class="text-white pt-lg-2">
+          Birthday Date  : {{ actor.birthday}}
+        </p>
+        <p class="text-white pt-lg-2">
+          Place Of Birth  : {{ actor.place_of_birth}}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <app-about3/>
+
+  @if (actorCast.length > 0) {
+  <div>
+    <h2 class="text-light mx-2 px-5 text-uppercase">Cast</h2>
+
+    <div class="con mx-5">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        @for(cast of actorCast ; track cast.id){ @if (cast.poster_path !==
+        null) {
+        <div ngxSlickItem class="slide pt-5 p-3">
+          <div class="cards">
+            <div class="imgContainer">
+              <img [src]="cast.poster_path | apiImg" alt="" class="w-100" />
+            </div>
+            <p class="text-center p-2 text-light">{{ cast.original_title }}</p>
+          </div>
+        </div>
+        } }
+      </ngx-slick-carousel>
+    </div>
+  </div>
+  }
+
+@if (actorCrow.length > 0) {
+  <div>
+    <h2 class="text-light mx-2 px-5 text-uppercase">Crew</h2>
+
+    <div class="con mx-5">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        @for(crow of actorCrow ; track crow.id){ @if (crow.poster_path !==
+        null) {
+        <div ngxSlickItem class="slide pt-5 p-3">
+          <div class="cards">
+            <div class="imgContainer ">
+              <img [src]="crow.poster_path | apiImg" alt="" class="w-100  " />
+            </div>
+            <p class="text-center p-2 text-light">{{ crow.original_title }}</p>
+          </div>
+        </div>
+        } }
+      </ngx-slick-carousel>
+    </div>
+  </div>
+}
+
+</section>
+
+<app-subscribe/>

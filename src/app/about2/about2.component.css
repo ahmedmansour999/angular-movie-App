@@ -1,0 +1,35 @@
+.vedioContainer
+{
+position: relative;
+}
+
+.vedio
+{
+  position: absolute;
+  top: 7%;
+  left: 18%;
+  z-index: -15;
+  overflow: hidden;
+  max-width: 63%;
+  max-height: 62%;
+}
+
+
+@media screen and (min-width : 1000px) {
+  .text h1
+{
+  font-size: 40px;
+}
+.text p
+{
+  font-size: 30px;
+}
+.text
+{
+  max-width: 50%;
+
+}
+}
+
+
+

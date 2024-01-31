@@ -1,0 +1,36 @@
+<section >
+  <nav class="navbar navbar-expand-lg  bg-warning">
+    <div class="container-fluid">
+      <a class="navbar-brand text-uppercase fw-bold text-danger" href="#" ><img src="../../assets/rabbit-removebg-preview.png" class="navImg" alt="">Rabbito</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-evenly w-100 fw-bold">
+          <li class="nav-item">
+            <a class="nav-link " routerLinkActive="activeLink" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="movies" routerLinkActive="activeLink">Movies</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLinkActive="activeLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item fw-bold " routerLink="trending"   routerLinkActive="activeLink" >Trending</a></li>
+              <li><a class="dropdown-item fw-bold " routerLink="tvSeries"  routerLinkActive="activeLink" >TV Series </a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item disabled" routerLinkActive="activeLink" >اشترك الان <span class="badge text-bg-success">قريبا</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  routerLink="wishList" routerLinkActive="activeLink">WishList</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+</section>
